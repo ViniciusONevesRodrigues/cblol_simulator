@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+#title {
+    font-size: 2em;
+    margin-top: 1em;
+}

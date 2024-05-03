@@ -1,0 +1,85 @@
+<main>
+    <div>
+        <h3>Editar time:</h3>
+        <form action="/rota_teams/teams/edit_teams" method="POST">
+            {{#if teams}}
+            <input type="hidden" id="id" name="id" value="{{teams._id}}">
+            <input type="hidden" name="oldTop" value="{{teams.Top}}">
+            <input type="hidden" name="oldJungle" value="{{teams.Jungle}}">
+            <input type="hidden" name="oldMid" value="{{teams.Mid}}">
+            <input type="hidden" name="oldADC" value="{{teams.ADC}}">
+            <input type="hidden" name="oldSupport" value="{{teams.Support}}">
+
+            <label for="name">Nome do time:</label>
+            <input type="text" id="name" name="name" placeholder="Digite o nome do time" value="{{teams.name}}">
+            <br>
+            <label for="Top">Top:</label>
+            <select id="Top" name="Top">
+                <option value="{{teams.Top}}" selected>{{teams.Top}}</option>
+                {{#each players}}
+                {{#if (eq position "Top")}}
+                {{#if (eq team "Nenhum")}}
+                <option value="{{playername}}">{{playername}}</option>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+                <option>Nenhum</option>
+            </select>
+            <br>
+            <label for="Jungle">Jungle:</label>
+            <select id="Jungle" name="Jungle">
+                <option value="{{teams.Jungle}}" selected>{{teams.Jungle}}</option>
+                {{#each players}}
+                {{#if (eq position "Jungle")}}
+                {{#if (eq team "Nenhum")}}
+                <option value="{{playername}}">{{playername}}</option>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+                <option>Nenhum</option>
+            </select>
+            <br>
+            <label for="Mid">Mid:</label>
+            <select id="Mid" name="Mid">
+                <option value="{{teams.Mid}}" selected>{{teams.Mid}}</option>
+                {{#each players}}
+                {{#if (eq position "Mid")}}
+                {{#if (eq team "Nenhum")}}
+                <option value="{{playername}}">{{playername}}</option>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+                <option>Nenhum</option>
+            </select>
+            <br>
+            <label for="ADC">ADC:</label>
+            <select id="ADC" name="ADC">
+                <option value="{{teams.ADC}}" selected>{{teams.ADC}}</option>
+                {{#each players}}
+                {{#if (eq position "ADC")}}
+                {{#if (eq team "Nenhum")}}
+                <option value="{{playername}}">{{playername}}</option>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+                <option>Nenhum</option>
+            </select>
+            <br>
+            <label for="Support">Support:</label>
+            <select id="Support" name="Support">
+                <option value="{{teams.Support}}">{{teams.Support}}</option>
+                {{#each players}}
+                {{#if (eq position "Support")}}
+                {{#if (eq team "Nenhum")}}
+                <option value="{{playername}}">{{playername}}</option>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+                <option>Nenhum</option>
+            </select>
+            <br>
+            <button type="submit">Editar Time</button>
+            {{/if}}
+        </form>
+    </div>
+</main>

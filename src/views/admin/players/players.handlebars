@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/css/players.css">
+<main>
+    <div id="title">Lista de jogadores</div>
+    <a href="/rota_players/players/add">
+    <button>Nova jogador</button></a>
+    <br>
+    {{#each players}}
+        <small><b>Nome:</b> {{playername}} </small><br>
+        <small><b>Habilidade:</b> {{skill}} </small><br>
+        <small><b>Posição:</b> {{position}} </small><br>
+        <small><b>Time:</b> {{team}} </small><br>
+        <small><b>Idade:</b> {{age}} </small><br>
+        <a href="/rota_players/edit_players/{{_id}}">
+        <button>Editar jogador</button></a>
+        <a href="/rota_players/delete_players/{{_id}}">
+        <button>Deletar jogador</button></a> 
+        <br>
+    {{/each}}
+</main>

@@ -1,0 +1,19 @@
+<main>
+    <h2>Lista de times</h2>
+    <hr>
+    <a href="/rota_teams/teams/add">
+    <button>Nova Time</button></a>
+    <br>
+    {{#each teams}}
+        <small><b>Nome:</b> {{name}} </small><br>
+        <small><b>Top:</b> {{Top}} </small><br>
+        <small><b>Jungle:</b> {{Jungle}} </small><br>
+        <small><b>Mid:</b> {{Mid}} </small><br>
+        <small><b>ADC:</b> {{ADC}} </small><br>
+        <small><b>Support:</b> {{Support}} </small><br>
+        <a href="/rota_teams/edit_teams/{{_id}}">
+            <button>Editar time</button></a>
+        <a href="/rota_teams/delete_teams/{{_id}}">
+            <button>Deletar time</button></a>
+    {{/each}}
+</main>

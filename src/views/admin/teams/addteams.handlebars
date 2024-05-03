@@ -1,0 +1,71 @@
+<main>
+    <div>
+        <h3>Novo time:</h3>
+        <form action="/rota_teams/teams/new" method="POST">
+            <label for="name">Nome do time:</label>
+            <input type="text" id="name" name="name" placeholder="Digite o nome do time">
+            <br>
+            <label for="Top">Top:</label>
+            <select id="Top" name="Top">
+                <option>Nenhum</option>
+                {{#each players}}
+                {{#if (eq position "Top")}}
+                {{#if (eq team "Nenhum")}}
+                <option value="{{playername}}">{{playername}}</option>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+            </select>
+            <br>
+            <label for="Jungle">Jungle:</label>
+            <select id="Jungle" name="Jungle">
+                <option>Nenhum</option>
+                {{#each players}}
+                {{#if (eq position "Jungle")}}
+                {{#if (eq team "Nenhum")}}
+                <option value="{{playername}}">{{playername}}</option>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+            </select>
+            <br>
+            <label for="Mid">Mid:</label>
+            <select id="Mid" name="Mid">
+                <option>Nenhum</option>
+                {{#each players}}
+                {{#if (eq position "Mid")}}
+                {{#if (eq team "Nenhum")}}
+                <option value="{{playername}}">{{playername}}</option>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+            </select>
+            <br>
+            <label for="ADC">ADC:</label>
+            <select id="ADC" name="ADC">
+                <option>Nenhum</option>
+                {{#each players}}
+                {{#if (eq position "ADC")}}
+                {{#if (eq team "Nenhum")}}
+                <option value="{{playername}}">{{playername}}</option>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+            </select>
+            <br>
+            <label for="Support">Support:</label>
+            <select id="Support" name="Support">
+                <option>Nenhum</option>
+                {{#each players}}
+                {{#if (eq position "Support")}}
+                {{#if (eq team "Nenhum")}}
+                <option value="{{playername}}">{{playername}}</option>
+                {{/if}}
+                {{/if}}
+                {{/each}}
+            </select>
+            <br>
+            <button type="submit">Cadastrar Time</button>
+        </form>
+    </div>
+</main>

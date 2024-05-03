@@ -1,0 +1,25 @@
+<main>
+    <div> 
+        <h3> Nova jogador: </h3>
+            <form action="/rota_players/players/new" method="POST">
+                <label for="playername">Nick do jogador: </label>
+                <input type="text" id="name" name="name" placeholder="Digite o nome do jogador">
+                <br>
+                <label for="skill">Habilidade: </label>
+                <input type="number" id="habilidade" id="skill" name="skill" placeholder="Digite a habilidade do jogador" max="100">
+                <br>
+                <label for="position">Posição: </label>
+                <select id="position" name="position">
+                    <option value="Top">Top</option>
+                    <option value="Jungle">Jungle</option>
+                    <option value="Mid">Mid</option>
+                    <option value="ADC">ADC</option>
+                    <option value="Support">Support</option>
+                </select>
+                <br>
+                <label for="age">Idade: </label>
+                <input type="number" id="age" name="age" placeholder="Digite a idade do jogador" max="100">
+                <button type="submit">Cadastrar Jogador</button>
+        </form>
+    </div>
+</main>
