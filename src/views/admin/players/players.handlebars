@@ -1,19 +1,26 @@
 <link rel="stylesheet" href="/css/players.css">
 <main>
+    <div id="square"></div>
+    <div id="square2"></div>
     <div id="title">Lista de jogadores</div>
     <a href="/rota_players/players/add">
-    <button>Nova jogador</button></a>
+    <div id="center">
+    <button id="btnAdd">+</button></a>
+    </div>
     <br>
     {{#each players}}
+    <div id="bgPlayer">
         <small><b>Nome:</b> {{playername}} </small><br>
         <small><b>Habilidade:</b> {{skill}} </small><br>
         <small><b>Posição:</b> {{position}} </small><br>
         <small><b>Time:</b> {{team}} </small><br>
         <small><b>Idade:</b> {{age}} </small><br>
         <a href="/rota_players/edit_players/{{_id}}">
-        <button>Editar jogador</button></a>
+        <button id="edit">Editar jogador</button></a>
         <a href="/rota_players/delete_players/{{_id}}">
-        <button>Deletar jogador</button></a> 
+        <button id="delete">Deletar jogador</button></a> 
         <br>
+    </div>
     {{/each}}
+    </div>
 </main>

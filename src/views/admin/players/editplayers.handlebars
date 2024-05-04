@@ -1,15 +1,25 @@
+<link rel="stylesheet" href="/css/addPlayers.css">
 <main>
+    <div id="square"></div>
+    <div id="square2"></div>
+    <div id="cardAdd"> 
     <div> 
         <h3> Editar jogador: </h3>
+        <br>
             <form action="/rota_players/players/edit_players" method="POST">
                 {{#if players}}
                 <input type="hidden" id="id" name="id" value="{{players._id}}">
+                <div class="field">
                 <label for="playername">Nick do jogador: </label>
                 <input type="text" id="name" name="name" placeholder="Digite o nome do jogador" value="{{players.playername}}">
+                </div>
                 <br>
+                <div class="field">
                 <label for="skill">Habilidade: </label>
-                <input type="number" id="skill" name="skill" placeholder="Digite a habilidade do jogador" max="100" value="{{players.skill}}">
+                <input type="number" id="skill" name="skill" placeholder="Digite a habilidade do jogador" max="99" value="{{players.skill}}">
+                </div>
                 <br>
+                <div class="field">
                 <label for="position">Posição: </label>
                 <select id="position" name="position">
                     <option value="Top" selected="{{isSelected "top" players.position}}">Top</option>
@@ -18,11 +28,15 @@
                     <option value="ADC" selected="{{isSelected "ADC" players.position}}">ADC</option>
                     <option value="Support" selected="{{isSelected "support" players.position}}">Support</option>
                 </select>
+                </div>
                 <br>
+                <div class="field">
                 <label for="age">Idade: </label>
                 <input type="number" id="age" name="age" placeholder="Digite a idade do jogador" max="100" value="{{players.age}}">
+                </div>
                 <button type="submit" class="btn btn-success">Editar Jogador</button>
                 {{/if}}
         </form>
     </div>
+    </div> 
 </main>
