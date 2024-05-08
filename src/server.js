@@ -35,5 +35,5 @@ app.use('/rota_players', rota_players);
 
 
 app.listen(PORT, () => {
-    console.log("http://localhost:8081/rota_players/players");
+    console.log("http://localhost:8081/");
 })

@@ -1,19 +1,38 @@
+<link rel="stylesheet" href="/css/teams.css">
 <main>
-    <h2>Lista de times</h2>
-    <hr>
+    <div id="center">
+    <nav>
+        <a href="/rota_players/players">
+            <img src="/img/person.png" id="personImg">
+        </a>
+        <a href="/rota_teams/teams">
+            <img src="/img/group.png" id="groupImg">
+        </a>
+    </nav>
+    </div>
+    <div id="square"></div>
+    <div id="square2"></div>
+    <div id="title">Lista de times</div>
+    <div id="center">
     <a href="/rota_teams/teams/add">
-    <button>Nova Time</button></a>
+        <button id="btnAdd">+</button>
+    </a>
+    </div>
     <br>
     {{#each teams}}
-        <small><b>Nome:</b> {{name}} </small><br>
+    <div id="bgTeam">
+        <small><b>Time:</b> {{name}} </small><br>
         <small><b>Top:</b> {{Top}} </small><br>
         <small><b>Jungle:</b> {{Jungle}} </small><br>
         <small><b>Mid:</b> {{Mid}} </small><br>
         <small><b>ADC:</b> {{ADC}} </small><br>
         <small><b>Support:</b> {{Support}} </small><br>
         <a href="/rota_teams/edit_teams/{{_id}}">
-            <button>Editar time</button></a>
+            <button id="edit">Editar time</button></a>
         <a href="/rota_teams/delete_teams/{{_id}}">
-            <button>Deletar time</button></a>
-    {{/each}}
+            <button id="delete">Deletar time</button></a>
+        <br>
+    </div>
+        {{/each}}
+    </div>
 </main>

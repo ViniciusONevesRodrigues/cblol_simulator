@@ -1,22 +1,23 @@
-<link rel="stylesheet" href="/css/addPlayers.css">
+<link rel="stylesheet" href="/css/formPlayers.css">
 <main>
     <div id="square"></div>
     <div id="square2"></div>
-    <div id="cardAdd"> 
+    <div id="cardAdd">
         <h3> Nova jogador: </h3>
         <br>
-            <form action="/rota_players/players/new" method="POST">
-                <div class="field">
+        <form action="/rota_players/players/new" method="POST">
+            <div class="field">
                 <label for="playername" id="title">Nick do jogador: </label>
                 <input type="text" id="name" name="name" placeholder="Digite o nome do jogador">
-                </div>
-                <br>
-                <div class="field">
+            </div>
+            <br>
+            <div class="field">
                 <label for="skill">Habilidade: </label>
-                <input type="number" id="habilidade" id="skill" name="skill" placeholder="Digite a habilidade do jogador" max="99">
-                </div>
-                <br>
-                <div class="field">
+                <input type="number" id="habilidade" id="skill" name="skill"
+                    placeholder="Digite a habilidade do jogador" max="99">
+            </div>
+            <br>
+            <div class="field">
                 <label for="position">Posição: </label>
                 <select id="position" name="position">
                     <option value="Top">Top</option>
@@ -25,15 +26,15 @@
                     <option value="ADC">ADC</option>
                     <option value="Support">Support</option>
                 </select>
-                </div>
-                <br>
-                <div class="field">
+            </div>
+            <br>
+            <div class="field">
                 <label for="age">Idade: </label>
                 <input type="number" id="age" name="age" placeholder="Digite a idade do jogador" max="100">
-                </div>
-                <center>
+            </div>
+            <center>
                 <button type="submit">Cadastrar Jogador</button>
-                </center>
+            </center>
         </form>
     </div>
 </main>

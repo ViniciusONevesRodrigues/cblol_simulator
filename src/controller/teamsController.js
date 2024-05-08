@@ -7,19 +7,19 @@ require('../models/team');
 const Players = mongoose.model('players');
 const Teams = mongoose.model('teams');
 
-router.get('/teams', (req, res)=> {
-    Teams.find().lean().then((teams)=> {
-        res.render("admin/teams/teams", {teams: teams})
+router.get('/teams', (req, res) => {
+    Teams.find().lean().then((teams) => {
+        res.render("admin/teams/teams", { teams: teams })
     })
 })
 
-router.get('/teams/add', (req, res)=> {
+router.get('/teams/add', (req, res) => {
     Players.find().lean().then((players) => {
-        res.render("admin/teams/addteams", { players: players});
+        res.render("admin/teams/addteams", { players: players });
     })
 })
 
-router.post('/teams/new', (req, res)=> {
+router.post('/teams/new', (req, res) => {
     var teams = new Teams();
     teams.name = req.body.name;
     teams.Top = req.body.Top;
@@ -27,8 +27,8 @@ router.post('/teams/new', (req, res)=> {
     teams.Mid = req.body.Mid;
     teams.ADC = req.body.ADC;
     teams.Support = req.body.Support;
-                                        
-    teams.save().then(()=> {
+
+    teams.save().then(() => {
         Players.updateMany(
             { playername: { $in: [req.body.Top, req.body.Jungle, req.body.Mid, req.body.ADC, req.body.Support] } },
             { $set: { team: req.body.name } }
@@ -37,15 +37,15 @@ router.post('/teams/new', (req, res)=> {
         }).catch((error) => {
             res.send("Erro ao atualizar os jogadores: " + error);
         });
-    }).catch((error)=> {
+    }).catch((error) => {
         res.send("Houve um erro ao salvar o time: " + error);
     });
 })
 
 router.get('/edit_teams/:id', (req, res) => {
-    Teams.findOne({ _id: req.params.id }).lean().then((teams) =>  {
+    Teams.findOne({ _id: req.params.id }).lean().then((teams) => {
         Players.find().lean().then((players) => {
-            res.render("admin/teams/editteams", { teams: teams, players: players});
+            res.render("admin/teams/editteams", { teams: teams, players: players });
         });
     })
 });
@@ -78,7 +78,7 @@ router.post('/teams/edit_teams', (req, res) => {
     });
 
     Promise.all(updatePromises).then(() => {
-        Teams.updateOne({_id: req.body.id}, {
+        Teams.updateOne({ _id: req.body.id }, {
             $set: {
                 name: req.body.name,
                 Top: req.body.Top,
@@ -99,11 +99,11 @@ router.post('/teams/edit_teams', (req, res) => {
 
 router.get('/delete_teams/:id', (req, res) => {
     Teams.findById(req.params.id).then(team => {
-    Players.updateMany({ team: team.name }, { $set: { team: "Nenhum" } }).then(() => {
-    Teams.deleteMany({_id: req.params.id}).then(() => {
-    res.redirect("/rota_teams/teams");
-    });
-})
+        Players.updateMany({ team: team.name }, { $set: { team: "Nenhum" } }).then(() => {
+            Teams.deleteMany({ _id: req.params.id }).then(() => {
+                res.redirect("/rota_teams/teams");
+            });
+        })
     });
 });
 

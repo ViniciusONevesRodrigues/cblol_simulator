@@ -1,71 +1,88 @@
+<link rel="stylesheet" href="/css/formTeams.css">
 <main>
-    <div>
+    <div id="square"></div>
+    <div id="square2"></div>
+    <div id="cardAdd">
         <h3>Novo time:</h3>
         <form action="/rota_teams/teams/new" method="POST">
-            <label for="name">Nome do time:</label>
-            <input type="text" id="name" name="name" placeholder="Digite o nome do time">
+            <div class="field">
+                <label for="name">Nome do time:</label>
+                <input type="text" id="name" name="name" placeholder="Digite o nome do time">
+            </div>
             <br>
-            <label for="Top">Top:</label>
-            <select id="Top" name="Top">
-                <option>Nenhum</option>
-                {{#each players}}
-                {{#if (eq position "Top")}}
-                {{#if (eq team "Nenhum")}}
-                <option value="{{playername}}">{{playername}}</option>
-                {{/if}}
-                {{/if}}
-                {{/each}}
-            </select>
+            <div class="field">
+                <label for="Top">Top:</label>
+                <select id="Top" name="Top">
+                    <option>Nenhum</option>
+                    {{#each players}}
+                    {{#if (eq position "Top")}}
+                    {{#if (eq team "Nenhum")}}
+                    <option value="{{playername}}">{{playername}}</option>
+                    {{/if}}
+                    {{/if}}
+                    {{/each}}
+                </select>
+            </div>
             <br>
-            <label for="Jungle">Jungle:</label>
-            <select id="Jungle" name="Jungle">
-                <option>Nenhum</option>
-                {{#each players}}
-                {{#if (eq position "Jungle")}}
-                {{#if (eq team "Nenhum")}}
-                <option value="{{playername}}">{{playername}}</option>
-                {{/if}}
-                {{/if}}
-                {{/each}}
-            </select>
+            <div class="field">
+                <label for="Jungle">Jungle:</label>
+                <select id="Jungle" name="Jungle">
+                    <option>Nenhum</option>
+                    {{#each players}}
+                    {{#if (eq position "Jungle")}}
+                    {{#if (eq team "Nenhum")}}
+                    <option value="{{playername}}">{{playername}}</option>
+                    {{/if}}
+                    {{/if}}
+                    {{/each}}
+                </select>
+            </div>
             <br>
-            <label for="Mid">Mid:</label>
-            <select id="Mid" name="Mid">
-                <option>Nenhum</option>
-                {{#each players}}
-                {{#if (eq position "Mid")}}
-                {{#if (eq team "Nenhum")}}
-                <option value="{{playername}}">{{playername}}</option>
-                {{/if}}
-                {{/if}}
-                {{/each}}
-            </select>
+            <div class="field">
+                <label for="Mid">Mid:</label>
+                <select id="Mid" name="Mid">
+                    <option>Nenhum</option>
+                    {{#each players}}
+                    {{#if (eq position "Mid")}}
+                    {{#if (eq team "Nenhum")}}
+                    <option value="{{playername}}">{{playername}}</option>
+                    {{/if}}
+                    {{/if}}
+                    {{/each}}
+                </select>
+            </div>
             <br>
-            <label for="ADC">ADC:</label>
-            <select id="ADC" name="ADC">
-                <option>Nenhum</option>
-                {{#each players}}
-                {{#if (eq position "ADC")}}
-                {{#if (eq team "Nenhum")}}
-                <option value="{{playername}}">{{playername}}</option>
-                {{/if}}
-                {{/if}}
-                {{/each}}
-            </select>
+            <div class="field">
+                <label for="ADC">ADC:</label>
+                <select id="ADC" name="ADC">
+                    <option>Nenhum</option>
+                    {{#each players}}
+                    {{#if (eq position "ADC")}}
+                    {{#if (eq team "Nenhum")}}
+                    <option value="{{playername}}">{{playername}}</option>
+                    {{/if}}
+                    {{/if}}
+                    {{/each}}
+                </select>
+            </div>
             <br>
-            <label for="Support">Support:</label>
-            <select id="Support" name="Support">
-                <option>Nenhum</option>
-                {{#each players}}
-                {{#if (eq position "Support")}}
-                {{#if (eq team "Nenhum")}}
-                <option value="{{playername}}">{{playername}}</option>
-                {{/if}}
-                {{/if}}
-                {{/each}}
-            </select>
+            <div class="field">
+                <label for="Support">Support:</label>
+                <select id="Support" name="Support">
+                    <option>Nenhum</option>
+                    {{#each players}}
+                    {{#if (eq position "Support")}}
+                    {{#if (eq team "Nenhum")}}
+                    <option value="{{playername}}">{{playername}}</option>
+                    {{/if}}
+                    {{/if}}
+                    {{/each}}
+                </select>
+            </div>
             <br>
-            <button type="submit">Cadastrar Time</button>
+            <center>
+                <button type="submit">Cadastrar Time</button>
+            </center>
         </form>
     </div>
 </main>
